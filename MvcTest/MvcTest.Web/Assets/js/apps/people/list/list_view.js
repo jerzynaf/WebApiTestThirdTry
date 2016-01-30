@@ -15,11 +15,11 @@
     },
 
     editPersonClicked: function (e) {
-      alert("editPerson->listView.js");
+      PeopleManager.trigger("person:edit", this.model.get("id"));
     }
   });
 
-  var NoPeopleView = Marionette.ItemView.extend({
+  List.NoPeopleView = Marionette.ItemView.extend({
     template: "#people-list-none",
     tagName: "tr",
     className: "alert"
@@ -29,7 +29,6 @@
     tagName: "table",
     className: "table table-hover",
     template: "#people-list",
-    emptyView: NoPeopleView,
     childView: List.Person,
     childViewContainer: "tbody"
   });

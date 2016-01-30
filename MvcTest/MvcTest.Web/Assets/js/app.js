@@ -24,7 +24,7 @@ PeopleManager.on("start", function () {
     Backbone.history.start();
 
     if (this.getCurrentRoute() === "") {
-      ContactManager.trigger("contacts:list");
+      PeopleManager.trigger("people:list");
     }
   }
 });
