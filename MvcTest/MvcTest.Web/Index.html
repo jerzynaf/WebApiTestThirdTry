@@ -9,12 +9,83 @@
     <link href="Content/Style.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Hello, world!</h1>
+    <div id="app-container">
+        <div id="main-region" class="container">
+            <p>Here is static content in the web page. You'll notice that it gets replaced by our app as soon as we start it.</p>
+        </div>
+    </div>
+    <script type="text/template" id="people-layout">
+        <h1>People</h1>
+        <div id="people-list-region"></div>
+    </script>
+
+    <script type="text/template" id="people-list">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Palindrome</th>
+                <th>Authorised</th>
+                <th>Enabled</th>
+                <th>Colours</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </script>
+
+    <script type="text/template" id="people-list-none">
+        <td colspan="3">No people to display.</td>
+    </script>
+
+    <script type="text/template" id="people-list-item">
+        <td><a href="#people/<%- id %>"><%- fullName %></a></td>
+        <td><%=isPalindrome%></td>
+        <td><%=isAuthorised%></td>
+        <td><%=isEnabled%></td>
+        <td><%=coloursString%></td>
+    </script>
+
+    <script type="text/template" id="colour-list-item">
+        <div class="form-group">
+            <input type="checkbox" <%=isChecked===true?'checked':''%>/><%=name%>
+        </div>
+    </script>
+
+<script type="text/template" id="missing-person-view">
+        <div class="alert alert-error">This person doesn't exist !</div>
+    </script>
+
+<script type="text/template" id="person-view">
+        <h1>Update <%- fullName %></h1>
+    <fieldset>
+        <legend>User Details</legend>
+        <div class="form-group">
+            <input type="checkbox" id="is-authorised" name="isAuthorised" <%=isAuthorised===true?'checked':''%>/><label id="is-authorised-label">Authorised</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="is-enabled" name="isEnabled" <%=isEnabled===true?'checked':''%>/><label id="is-enabled-label">Enabled</label>
+        </div>
+
+    </fieldset>
+    <fieldset>
+        <legend>Favourite Colours</legend>
+        <div id="favourite-colours"></div>
+    </fieldset>
+
+    </script>
+
+    <script type="text/template" id="loading-view">
+        <div id="spinner"></div>
+    </script>
+
 
     <script src="Assets/js/vendor/jquery.js"></script>
     <script src="Assets/js/vendor/underscore.js"></script>
     <script src="Assets/js/vendor/json2.js"></script>
     <script src="Assets/js/vendor/backbone.js"></script>
     <script src="Assets/js/vendor/backbone.marionette.js"></script>
+    <script type="text/javascript">
+        PeopleManager.start();
+    </script>
+
 </body>
 </html>
