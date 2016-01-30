@@ -133,10 +133,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\js\vendor\backbone.js" />
+    <Content Include="Assets\js\vendor\backbone.marionette.js" />
+    <Content Include="Assets\js\vendor\jquery.js" />
+    <Content Include="Assets\js\vendor\json2.js" />
+    <Content Include="Assets\js\vendor\underscore.js" />
     <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
     <Content Include="Areas\API\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Index.html" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
