@@ -31,7 +31,7 @@
       return promise;
     },
 
-    getPersontEntity: function (personId) {
+    getPersonEntity: function (personId) {
       var person = new Entities.Person({ id: personId });
       var defer = $.Deferred();
       person.fetch({

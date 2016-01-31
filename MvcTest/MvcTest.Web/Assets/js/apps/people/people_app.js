@@ -12,7 +12,6 @@
     },
 
     editPerson: function (id) {
-      alert("edit person");
       PeopleApp.Edit.Controller.editPerson(id);
     }
   };
